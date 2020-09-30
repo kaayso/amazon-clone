@@ -26,6 +26,7 @@
 .product__info {
   height: 100px;
   margin-bottom: 15px;
+  width: 90%;
 }
 
 .product>button {
@@ -35,4 +36,8 @@
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
   padding: 3px;
+}
+
+.product__rating {
+  display: flex;
 }

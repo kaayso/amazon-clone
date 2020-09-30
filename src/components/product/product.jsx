@@ -1,21 +1,27 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import './product.css';
 
-export default function product() {
+export default function product({
+  title, price, image, rating,
+}) {
   return (
     <div className="product">
       <div className="product__info">
-        <p>Xbox 360 controller</p>
+        <p>{title}</p>
         <p className="product__price">
           <small>$</small>
-          <strong>19.99</strong>
+          <strong>{price}</strong>
         </p>
         <div className="product__rating">
-          <p>⭐️</p>
+          {
+            // eslint-disable-next-line jsx-a11y/accessible-emoji
+            Array(rating).fill().map((_, i) => (<p key={i}>⭐️</p>))
+          }
         </div>
       </div>
-      <img src="https://m.media-amazon.com/images/I/41+sLcxaInL._AC_SL520_.jpg" alt="" />
-      <button>Add to Basket</button>
+      <img src={image} alt="" />
+      <button type="button">Add to Basket</button>
     </div>
   );
 }
